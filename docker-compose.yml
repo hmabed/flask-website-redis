@@ -1,0 +1,25 @@
+version: "3"
+services:
+    hellofrompythonapp:
+         image: monimage
+         depends_on:
+             - redis
+         ports:
+               - "80:80"
+         networks:
+               - mynetwork
+         environment:
+               - NOM=les enemis
+    redis:
+         image: redis
+         command: bash -c "redis-server --appendonly yes"
+         ports:
+             - "6379:6379"
+         networks:
+             - mynetwork
+         volumes:
+             - ./redis-volume:/data
+networks:
+    mynetwork:
+    
+
