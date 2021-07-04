@@ -1,7 +1,7 @@
 version: "3"
 services:
     hellofrompythonapp:
-         image: monimage
+         image: hmabed/hellofrompython:latest
          depends_on:
              - redis
          ports:
@@ -11,7 +11,7 @@ services:
          environment:
                - NOM=les enemis
     redis:
-         image: redis
+         image: redis:latest
          command: bash -c "redis-server --appendonly yes"
          ports:
              - "6379:6379"
