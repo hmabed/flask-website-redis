@@ -1,4 +1,6 @@
 version: "3"
+volumes:
+    redis_db:
 services:
     hellofrompythonapp:
          image: hmabed/hellofrompython:final
@@ -18,7 +20,7 @@ services:
          networks:
              - mynetwork
          volumes:
-             - ./redis-volume:/data
+             - redis_db:/data
 networks:
     mynetwork:
     
