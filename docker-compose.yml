@@ -12,6 +12,9 @@ services:
                - mynetwork
          environment:
                - NOM=users
+         volumes:
+             - /data/app:/app
+         restart: always
     redis:
          image: redis:latest
          command: bash -c "redis-server --appendonly yes"
