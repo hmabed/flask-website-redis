@@ -20,7 +20,8 @@ services:
          networks:
              - mynetwork
          volumes:
-             - redis_db:/data
+             - /data/redis:/data
+         restart: always
 networks:
     mynetwork:
     
